@@ -7,6 +7,7 @@ const errorMessage = "You do not have permissions to perform this action";
 
 const authorization = async (req, res, next) => {
     const authHeader = req.headers.authorization;
+ 
     if (!authHeader || !authHeader.startsWith("Bearer")) {
         const message = "Unauthenticaded No Bearer";
         return next(createCustomError(message, 401));
